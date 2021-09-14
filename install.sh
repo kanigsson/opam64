@@ -154,14 +154,14 @@ tdirclean(){
 }
 trap tdirclean EXIT
 
-set -e
-cd "$tdir"
-echo "test" >test
-if ! tar -cf- test 2>/dev/null | xz >/dev/null 2>&1 ; then
-    add_failed "tar / xz"
-    exit_failed
-fi
-rm test
+#set -e
+#cd "$tdir"
+#echo "test" >test
+#if ! tar -cf- test 2>/dev/null | xz >/dev/null 2>&1 ; then
+#    add_failed "tar / xz"
+#    exit_failed
+#fi
+#rm test
 
 git_repo='github.com/fdopen/opam-repository-mingw.git'
 git_test='github.com/fdopen/installer-test-repo.git'
